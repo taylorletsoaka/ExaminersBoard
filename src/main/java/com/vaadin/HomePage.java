@@ -26,8 +26,9 @@ public class HomePage extends HorizontalLayout {
     protected Button reports;
     protected Button customize;
     protected Button logout;
-    protected Label viewTitle;
+    protected Label title;
     protected CssLayout content;
+    protected CssLayout studentTable;
 
     public HomePage() {
         Design.read(this);

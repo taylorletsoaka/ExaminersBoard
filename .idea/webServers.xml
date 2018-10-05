@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="046de261-5d95-42f2-8983-449f1cef39cc" name="SQLServer" url="https://db4free.net/phpMyAdmin/index.php?target=import.php">
+        <fileTransfer host="db4free.net" port="3306" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="3306" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -9,7 +9,7 @@
   <vaadin-horizontal-layout style-name="app-shell" spacing="false" responsive size-full>
    <vaadin-css-layout style-name="navigation-bar-container" width="200px" height-full>
     <vaadin-css-layout style-name="navigation-bar" size-full>
-     <vaadin-label style-name="logo" width-full plain-text>
+     <vaadin-label icon="fonticon://Vaadin-Icons/e6fa" style-name="logo" width-full plain-text>
        Application menu 
      </vaadin-label>
      <vaadin-button icon="fonticon://Vaadin-Icons/e7b3" style-name="menu borderless" plain-text _id="menuButton">
@@ -32,12 +32,12 @@
     </vaadin-css-layout>
    </vaadin-css-layout>
    <vaadin-vertical-layout style-name="content-container" spacing="false" size-full margin="false" :expand>
-    <vaadin-label style-name="view-title" width-full plain-text _id="viewTitle">
+    <vaadin-label style-name="view-title" width-full plain-text _id="title">
       View title 
     </vaadin-label>
     <vaadin-css-layout size-full _id="content" :expand>
      <vaadin-css-layout style-name="padding-right padding-bottom padding-left" size-full>
-      <vaadin-css-layout style-name="content-section padding" size-full></vaadin-css-layout>
+      <vaadin-css-layout style-name="content-section padding" size-full _id="studentTable"></vaadin-css-layout>
      </vaadin-css-layout>
     </vaadin-css-layout>
    </vaadin-vertical-layout>
