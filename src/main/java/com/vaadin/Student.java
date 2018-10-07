@@ -1,12 +1,14 @@
 package com.vaadin;
 
 public class Student {
+
     private String id;
     private String firstName;
     private String lastName;
     private String email;
     private String degree;
     private String yearOfStudy;
+    private Marks marks;
 
     public Student(String id, String firstName, String lastName, String degree, String yearOfStudy){
         this.id = id;
@@ -74,4 +76,5 @@ public class Student {
     public String toString() {
         return firstName;
     }
+
 }
