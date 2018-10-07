@@ -133,7 +133,13 @@ public class MyUI extends UI {
         voteButton.setResponsive(true);
         voteButton.setStyleName("primary");
 
-        HorizontalLayout toolbar = new HorizontalLayout(voteButton);
+        Button backButton = new Button("Back");
+        backButton.setIcon(VaadinIcons.ARROW_BACKWARD);
+        backButton.setResponsive(true);
+        backButton.setStyleName("primary");
+
+        HorizontalLayout toolbar = new HorizontalLayout();
+        toolbar.addComponents(backButton, voteButton);
         toolbar.setResponsive(true);
 
         homePage.studentTable.addComponents(toolbar, marksContainer);
@@ -144,6 +150,9 @@ public class MyUI extends UI {
            voteSession(clickEvent, student);
         });
 
+        backButton.addClickListener(clickEvent -> {
+           displayAllStudents();
+        });
     }
 
     private void voteSession(Button.ClickEvent clickEvent, Student student) {

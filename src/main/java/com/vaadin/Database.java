@@ -70,6 +70,7 @@ public class Database{
 
         String courseName = null;
         String query = String.format("SELECT * FROM course WHERE course_id = '%s'", course_id);
+        Statement statement = connection.createStatement();
         try {
             ResultSet result = statement.executeQuery(query);
             if(result.next()){
@@ -90,7 +91,7 @@ public class Database{
 
         try {
 
-            ResultSet result = statement.executeQuery(query);
+            result = statement.executeQuery(query);
 
             while(result.next()){
                 String yearMark = result.getString("year_mark");
