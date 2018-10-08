@@ -2,6 +2,9 @@ package com.vaadin;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Helper class used to retrieve information from database tables
+ */
 public class Database{
 
     private Connection connection = null;

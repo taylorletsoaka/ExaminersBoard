@@ -1,5 +1,8 @@
 package com.vaadin;
 
+/**
+ * Helper class used to create Mark objects for a given student
+ */
 public class Marks {
 
     String outcome, finalMark, examMark, yearMark, tutAttendance, course;
