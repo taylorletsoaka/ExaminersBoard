@@ -22,14 +22,17 @@ public class Database{
         }
     }
 
+    /**
+     * Gets all the students in the database
+     * @return an array list of students
+     * @throws SQLException when it fails to execute a query
+     */
     public ArrayList<Student> getStudents() {
-
 
         ArrayList<Student> students = new ArrayList<Student>();
         String query = "SELECT * FROM student";
         try{
             result = statement.executeQuery(query);
-
             while(result.next()) {
 
                 String id = Integer.toString(result.getInt("student_id"));
@@ -49,6 +52,13 @@ public class Database{
         return students;
     }
 
+    /**
+     * Checks if the login details of a client are valid
+     * @param username
+     * @param password
+     * @throws SQLException when we fail to execute a query
+     * @return true if the username and password correspond to a record in the database, returns false otherwise
+     */
     public boolean validLogin(String username, String password) {
 
         String query = String.format("SELECT * FROM staff WHERE staff_password = '%s' and staff_id = '%s'", password, username);
@@ -66,6 +76,12 @@ public class Database{
         return false;
     }
 
+    /**
+     * Returns a name of a course corresponding to a given course id
+     * @param course_id
+     * @return course name given a course id
+     * @throws SQLException
+     */
     public String getCourseName(String course_id) throws SQLException {
 
         String courseName = null;
@@ -84,6 +100,11 @@ public class Database{
 
     }
 
+    /**
+     * Returns all the marks for a given student
+     * @param student
+     * @return an array list containing student Mark objects
+     */
     public ArrayList<Marks> getMarks(Student student) {
 
         ArrayList<Marks> marks = new ArrayList<>();

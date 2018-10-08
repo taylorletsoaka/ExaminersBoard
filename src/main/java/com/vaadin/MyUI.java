@@ -34,11 +34,18 @@ public class MyUI extends UI {
     final VerticalLayout loginPage = new VerticalLayout();
     HomePage homePage = new HomePage();
 
+    /**
+     * Point of entry of application
+     * @param vaadinRequest
+     */
     @Override
     protected void init(VaadinRequest vaadinRequest)  {
         onCreate();
     }
 
+    /**
+     * Displays the application's login page
+     */
     private void onCreate() {
 
         loginPage.setResponsive(true);
@@ -76,6 +83,9 @@ public class MyUI extends UI {
         });
     }
 
+    /**
+     * Displays all the students in the database in a grid
+     */
     private void displayAllStudents() {
 
         homePage.studentTable.removeAllComponents();
@@ -103,6 +113,10 @@ public class MyUI extends UI {
         });
     }
 
+    /**
+     * Displays a given student's in a grid when the student is clicked
+     * @param itemClick
+     */
     private void displayStudentsMarks(Grid.ItemClick<Student> itemClick) {
 
         homePage.studentTable.removeAllComponents();
@@ -162,6 +176,11 @@ public class MyUI extends UI {
         });
     }
 
+    /**
+     * Begins a voting session
+     * @param clickEvent
+     * @param student
+     */
     private void voteSession(Button.ClickEvent clickEvent, Student student) {
 
     }
@@ -192,39 +211,4 @@ public class MyUI extends UI {
     public static class MyUIServlet extends VaadinServlet {
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-               grid.addComponentColumn(this::createVoteButton);
-               beginVoteButton.addClickListener(e -> {
-                   grid.asSingleSelect().clear();
-               });
-
-               /*
-               TextField filterText = new TextField();
-               filterText.setResponsive(true);
-               filterText.setPlaceholder("filter by name...");
-               filterText.addValueChangeListener(e -> updateList(filterText.getValue()));
-               filterText.setValueChangeMode(ValueChangeMode.LAZY);
-
-               Button clearFilterTextBtn = new Button(VaadinIcons.CLOSE);
-               clearFilterTextBtn.setResponsive(true);
-               clearFilterTextBtn.setDescription("Clear the current filter");
-               clearFilterTextBtn.addClickListener(e -> filterText.clear());
-
-               CssLayout filtering = new CssLayout();
-               filtering.setResponsive(true);
-               filtering.addComponents(filterText, clearFilterTextBtn);
-               filtering.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
-               */
 }
