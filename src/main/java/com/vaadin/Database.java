@@ -26,9 +26,9 @@ public class Database{
 
 
         ArrayList<Student> students = new ArrayList<Student>();
-
+        String query = "SELECT * FROM student";
         try{
-            result = statement.executeQuery("SELECT * FROM student");
+            result = statement.executeQuery(query);
 
             while(result.next()) {
 
@@ -37,8 +37,8 @@ public class Database{
                 String lastName = result.getString("student_last_name");
                 String degree = result.getString("degree");
                 String yearOfStudy = result.getString("year_of_study");
-
-                students.add(new Student(id, firstName, lastName, degree, yearOfStudy));
+                String outcome = result.getString("outcome");
+                students.add(new Student(id, firstName, lastName, degree, yearOfStudy, outcome));
 
             }
         }

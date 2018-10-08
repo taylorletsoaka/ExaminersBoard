@@ -8,15 +8,16 @@ public class Student {
     private String email;
     private String degree;
     private String yearOfStudy;
-    private Marks marks;
+    private String outcome;
 
-    public Student(String id, String firstName, String lastName, String degree, String yearOfStudy){
+    public Student(String id, String firstName, String lastName, String degree, String yearOfStudy, String outcome){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.degree = degree;
         this.yearOfStudy = yearOfStudy;
         this.email = id + "@students.wits.ac.za";
+        this.outcome = outcome;
 
     }
 
@@ -55,11 +56,17 @@ public class Student {
     public String getYearOfStudy(){
         return yearOfStudy;
     }
+
+    public String getOutcome() {
+        return outcome;
+    }
+
     /**
     @Override
     public int hashCode() {
         return id;
     }*/
+
 
     @Override
     public boolean equals(Object obj) {

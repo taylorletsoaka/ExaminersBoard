@@ -95,6 +95,7 @@ public class MyUI extends UI {
         grid.addColumn(Student::getlastName).setCaption("Last name");
         grid.addColumn(Student::getDegree).setCaption("Degree");
         grid.addColumn(Student::getYearOfStudy).setCaption("Year of Study");
+        grid.addColumn(Student::getOutcome).setCaption("Outcome");
         homePage.studentTable.addComponent(grid);
 
         grid.addItemClickListener(itemClick -> {
@@ -125,7 +126,7 @@ public class MyUI extends UI {
         marksContainer.addColumn(Marks::getCourse).setCaption("Course");
         marksContainer.addColumn(Marks::getYearMark).setCaption("Year Mark");
         marksContainer.addColumn(Marks::getExamMark).setCaption("Exam Mark");
-        marksContainer.addColumn(Marks::getFinalMark).setCaption("Final Exam");
+        marksContainer.addColumn(Marks::getFinalMark).setCaption("Final Mark");
         marksContainer.addColumn(Marks::getOutcome).setCaption("Outcome");
         marksContainer.addColumn(Marks::getTutAttendance).setCaption("Tut Attendance");
 
@@ -139,8 +140,14 @@ public class MyUI extends UI {
         backButton.setStyleName("primary");
 
         HorizontalLayout toolbar = new HorizontalLayout();
-        toolbar.addComponents(backButton, voteButton);
         toolbar.setResponsive(true);
+
+        if(student.getOutcome().equals("PCD") || student.getOutcome().equals("Q") || student.getOutcome().equals("***")){
+            toolbar.addComponent(backButton);
+        }
+        else {
+            toolbar.addComponents(backButton, voteButton);
+        }
 
         homePage.studentTable.addComponents(toolbar, marksContainer);
 
