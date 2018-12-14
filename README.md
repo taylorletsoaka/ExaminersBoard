@@ -64,3 +64,6 @@ Student Marks
 -------------------------
 
 ![Student Marks](https://github.com/taylorletsoaka/ExaminersBoard/blob/master/src/main/resources/student.PNG)
+
+## License & copyright
+© Taylor Letsoaka. Wits University 2018 
